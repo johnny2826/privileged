@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "name": "Shaik johny",
+      "age": 28,
+      "gender": "Male",
+      "profession": "Engineer",
+      "address": "Hmt colony road 22 line 1 Miyapur Hyderabad",
+      "email": "johnnyshaik1995@gmail.com",
+      "phone": "9618812826",
+      "amount": 211,
+      "year": "2018",
+      "eligibility": true,
+      "couponCode": "2016",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "name": "Shaik johny",
+      "age": 21,
+      "gender": "Male",
+      "profession": "Doctor",
+      "address": "Hmt colony road 22 line 1 Miyapur Hyderabad",
+      "email": "johnnyshaik1995@gmail.com",
+      "phone": "9618812826",
+      "amount": 345,
+      "year": "2020",
+      "eligibility": null,
+      "couponCode": null,
+      "id": 2
+    }
+  ]
+}

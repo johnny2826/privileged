@@ -1,0 +1,85 @@
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.segmented-control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.segmented-control button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #eaeaea;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.segmented-control button.active {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="tel"],
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  button {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 300px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  select,
+  button {
+    font-size: 12px;
+  }
+}

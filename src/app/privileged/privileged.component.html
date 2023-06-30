@@ -1,0 +1,122 @@
+<div class="container">
+  <h2>Customer Form</h2>
+
+  <!-- Segmented Control -->
+  <div class="segmented-control">
+    <button (click)="showPrivilegedForm = true" [class.active]="showPrivilegedForm">Privileged</button>
+    <button (click)="showPrivilegedForm = false" [class.active]="!showPrivilegedForm">Unprivileged</button>
+  </div>
+
+  <!-- Form -->
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" required>
+      <div *ngIf="customerForm.controls['name'].touched && customerForm.controls['name'].invalid" class="error">Name is required and should be within 30 characters.</div>
+    </div>
+
+    <!-- Age -->
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" formControlName="age" required>
+      <div *ngIf="customerForm.controls['age'].touched && customerForm.controls['age'].invalid" class="error">Age is required and should be between 20 and 60.</div>
+    </div>
+
+    <!-- Gender -->
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      <div *ngIf="customerForm.controls['gender'].touched && customerForm.controls['gender'].invalid" class="error">Gender is required.</div>
+    </div>
+
+    <!-- Profession -->
+    <div class="form-group">
+      <label for="profession">Profession</label>
+      <select id="profession" formControlName="profession" required>
+        <option value="" disabled selected>Select Profession</option>
+        <option value="Doctor">Doctor</option>
+        <option value="Engineer">Engineer</option>
+        <option value="Businessman">Businessman</option>
+        <option value="Salesperson">Salesperson</option>
+        <option value="Teacher">Teacher</option>
+      </select>
+      <div *ngIf="customerForm.controls['profession'].touched && customerForm.controls['profession'].invalid" class="error">Profession is required.</div>
+    </div>
+
+    <!-- Address -->
+    <div class="form-group">
+      <label for="address">Address</label>
+      <input type="text" id="address" formControlName="address" required>
+      <div *ngIf="customerForm.controls['address'].touched && customerForm.controls['address'].invalid" class="error">Address is required.</div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" required>
+      <div *ngIf="customerForm.controls['email'].touched && customerForm.controls['email'].invalid" class="error">Email is required and should be a valid email address.</div>
+    </div>
+
+    <!-- Phone -->
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" formControlName="phone" required>
+      <div *ngIf="customerForm.controls['phone'].touched && customerForm.controls['phone'].invalid" class="error">Phone is required and should be 10 digits.</div>
+    </div>
+
+    <!-- Amount -->
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" id="amount" formControlName="amount" required>
+      <div *ngIf="customerForm.controls['amount'].touched && customerForm.controls['amount'].invalid" class="error">
+        Amount is required and should be less than 99999.
+      </div>
+    </div>
+    <!-- Year -->
+    <div class="form-group">
+      <label for="year">Year</label>
+      <select id="year" formControlName="year" required>
+        <option value="" disabled selected>Select Year</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+      </select>
+      <div *ngIf="customerForm.controls['year'].touched && customerForm.controls['year'].invalid" class="error">Year is required.</div>
+    </div>
+
+    <!-- Eligibility -->
+    <div class="form-group" *ngIf="showPrivilegedForm">
+      <label for="eligibility">Eligibility</label>
+      <input type="checkbox" id="eligibility" formControlName="eligibility" >
+      <!-- <div *ngIf="customerForm.controls['eligibility'].touched && customerForm.controls['eligibility'].invalid" class="error">Eligibility is required for Privileged customers.</div> -->
+    </div>
+
+    <!-- Coupon Code -->
+    <div class="form-group" *ngIf="showPrivilegedForm">
+      <label for="couponCode">Coupon Code</label>
+      <select id="couponCode" formControlName="couponCode" required>
+        <option value="" disabled selected>Select Coupon Code</option>
+        <!-- <option *ngFor="let coupon of coupons" [value]="coupon">{{ coupon }}</option> -->
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+      </select>
+      <!-- <div *ngIf="customerForm.controls['amount'].touched && customerForm.controls['amount'].invalid"class="error">Coupon Code is required for Privileged customers.</div> -->
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" >Submit</button>
+  </form>
+</div>
