@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "privileged": [
     {
       "id": 1,
       "title": "json-server",
@@ -18,9 +18,51 @@
       "eligibility": true,
       "couponCode": "2016",
       "id": 2
+    },
+    {
+      "name": "Shaik johny",
+      "age": 34,
+      "gender": "Male",
+      "profession": "Engineer",
+      "address": "Hmt colony road 22 line 1 Miyapur Hyderabad",
+      "email": "johnnyshaik1995@gmail.com",
+      "phone": "9618812826",
+      "amount": 321,
+      "year": "2015",
+      "eligibility": true,
+      "couponCode": "ABC123",
+      "id": 3
+    },
+    {
+      "name": "Shaik johny",
+      "age": 21,
+      "gender": "Male",
+      "profession": "Doctor",
+      "address": "Hmt colony road 22 line 1 Miyapur Hyderabad",
+      "email": "johnnyshaik1995@gmail.com",
+      "phone": "9618812826",
+      "amount": 121,
+      "year": "2015",
+      "eligibility": true,
+      "couponCode": "ABC123",
+      "id": 4
+    },
+    {
+      "name": "Shaik johny",
+      "age": 21,
+      "gender": "Male",
+      "profession": "Engineer",
+      "address": "Hmt colony road 22 line 1 Miyapur Hyderabad",
+      "email": "johnnyshaik1995@gmail.com",
+      "phone": "9618812826",
+      "amount": 213,
+      "year": "2016",
+      "eligibility": false,
+      "couponCode": "",
+      "id": 5
     }
   ],
-  "comments": [
+  "unprivileged": [
     {
       "id": 1,
       "body": "some comment",
@@ -39,6 +81,26 @@
       "eligibility": null,
       "couponCode": null,
       "id": 2
+    },
+    {
+      "name": "Shaik johny",
+      "age": 21,
+      "gender": "Male",
+      "profession": "Doctor",
+      "address": "Hmt colony road 22 line 1 Miyapur Hyderabad",
+      "email": "johnnyshaik1995@gmail.com",
+      "phone": "9618812826",
+      "amount": 2232,
+      "year": "2020",
+      "eligibility": null,
+      "couponCode": null,
+      "id": 3
     }
+  ],
+  "Coupon": [
+    "ABC123",
+    "ABC123",
+    "ABC123",
+    "ABC123"
   ]
 }

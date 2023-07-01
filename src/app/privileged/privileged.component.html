@@ -7,6 +7,7 @@
     <button (click)="showPrivilegedForm = false" [class.active]="!showPrivilegedForm">Unprivileged</button>
   </div>
 
+
   <!-- Form -->
   <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
     <!-- Name -->
@@ -67,7 +68,10 @@
     <div class="form-group">
       <label for="phone">Phone</label>
       <input type="tel" id="phone" formControlName="phone" required>
-      <div *ngIf="customerForm.controls['phone'].touched && customerForm.controls['phone'].invalid" class="error">Phone is required and should be 10 digits.</div>
+      <div *ngIf="phone?.invalid && (phone?.dirty || phone?.touched)" class="error">
+        <div *ngIf="phone?.errors?.['required']">Phone number is required.</div>
+        <div *ngIf="phone?.errors?.['minlength'] || phone?.errors?.['maxlength']">Invalid phone number. Please enter 10 digits.</div>
+      </div>
     </div>
 
     <!-- Amount -->
@@ -99,24 +103,21 @@
     <!-- Eligibility -->
     <div class="form-group" *ngIf="showPrivilegedForm">
       <label for="eligibility">Eligibility</label>
-      <input type="checkbox" id="eligibility" formControlName="eligibility" >
-      <!-- <div *ngIf="customerForm.controls['eligibility'].touched && customerForm.controls['eligibility'].invalid" class="error">Eligibility is required for Privileged customers.</div> -->
+      <input type="checkbox" id="eligibility"  formControlName="eligibility" >
+ 
     </div>
 
     <!-- Coupon Code -->
     <div class="form-group" *ngIf="showPrivilegedForm">
       <label for="couponCode">Coupon Code</label>
-      <select id="couponCode" formControlName="couponCode" required>
+      <select id="couponCode" formControlName="couponCode" >
         <option value="" disabled selected>Select Coupon Code</option>
-        <!-- <option *ngFor="let coupon of coupons" [value]="coupon">{{ coupon }}</option> -->
-        <option value="2015">2015</option>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
+        <option *ngFor="let coupon of coupons" [value]="coupon">{{ coupon }}</option>
       </select>
-      <!-- <div *ngIf="customerForm.controls['amount'].touched && customerForm.controls['amount'].invalid"class="error">Coupon Code is required for Privileged customers.</div> -->
     </div>
 
     <!-- Submit Button -->
-    <button type="submit" >Submit</button>
+    <button type="submit" [disabled]="customerForm.invalid" >Submit</button>
   </form>
+
 </div>
