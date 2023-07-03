@@ -83,3 +83,8 @@ button {
     font-size: 12px;
   }
 }
+
+.disabled-button {
+  background-color: gray;
+  /* Other disabled button styles */
+}
